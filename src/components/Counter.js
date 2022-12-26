@@ -1,10 +1,10 @@
 import useCounter from "../hooks/useCounter";
 import Card from "./Card";
 
-const BackwardCounter = () => {
-  const counter = useCounter(-1);
+const Counter = (props) => {
+  const counter = useCounter(props.number);
 
   return <Card>{counter}</Card>;
 };
 
-export default BackwardCounter;
+export default Counter;
