@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
-const useCounter = (foward = true) => {
+const useCounter = (number) => {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCounter((prevCounter) => (foward ? prevCounter + 1 : prevCounter - 1));
+      setCounter((prevCounter) => prevCounter + (number || 1));
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [number]);
 
   return counter;
 };
